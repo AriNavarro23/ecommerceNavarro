@@ -1,13 +1,13 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
         <NavBar/>
-      </header>
+        <ItemListContainer greeting='Hola Mundo' />
     </div>
   );
 }
