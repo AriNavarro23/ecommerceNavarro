@@ -1,20 +1,39 @@
+import { useState } from "react"
+
+// const ItemCount = () => {
+
+//     const [state, setState] = useState (0)
+
+//     return (
+//         <div>
+//             <button onClick={ () => { setState(state - 1) } }>-</button>
+//             <p>{state}</p>
+//             <button onClick={ () => { setState(state + 1) } }>+</button>
+//         </div>
+//     )
+// }
+
 const ItemCount = () => {
-    
-    let count = 0
-    
-    const decrement = () => {
-        count = count -1
-    }
+    const [counter, setCounter] = useState (0);
 
-    const increment = () => {
-        count = count +1
+    const sumar = (counter) => {
+        if (counter > 0) {
+            setCounter(counter +1)
+        }
     }
+    const restar = (counter) => {
+        if (counter < 0) {
+            setCounter(counter -1)
+        }
+    }
+    const reset = () => setCounter(0);
 
-    return (
+    return(
         <div>
-            <button onClick={decrement}>-</button>
-            <p>{count}</p>
-            <button onClick={increment}>+</button>
+            <button onClick={restar}>-</button>
+            <p>{counter}</p>
+            <button onClick={sumar}>+</button><br/>
+            <button onClick={reset}>Reset</button>
         </div>
     )
 }

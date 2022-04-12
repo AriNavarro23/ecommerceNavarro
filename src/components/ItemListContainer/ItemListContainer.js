@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react'
-import { getProducts } from '../mock'
+// import { getProducts } from '../mock'
 
 const ItemListContainer = (props) => {
     const [products, setProducts] = useState([])
     
-    useEffect(() => {
-        getProducts().then(prods => {
-            setProducts(prods)
-        }).catch(error => {
-            console.log(error)
-        })
-    }, [])
+    // useEffect(() => {
+    //     getProducts().then(prods => {
+    //         setProducts(prods)
+    //     }).catch(error => {
+    //         console.log(error)
+    //     })
+    // }, [])
 
     return(
         <div>

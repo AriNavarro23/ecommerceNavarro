@@ -20,7 +20,13 @@ header{
     background-color: gray;
 }
 
-.NavItem li a{
+.navItem{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.navItem li a{
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
@@ -28,7 +34,7 @@ header{
     transition: 0.3s ease;
 }
 
-.NavItem li a:hover {    
+.navItem li a:hover {    
     color: #088178;
 }
 
@@ -47,6 +53,12 @@ a{
     color: black;
 }
 
+.CartWidget{
+    display: flex;
+    margin: 15px;
+}
+
 .button{
-    height: 50px;
+    height: 30px;
+    margin: 10px;
 }
