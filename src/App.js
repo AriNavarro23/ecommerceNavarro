@@ -11,9 +11,9 @@ const App = () => {
   return (
     <div className="App">
         <NavBar/>
-        <ItemListContainer greeting='Hola Mundo' />
-        <ItemCount/>
-        <ItemDetailContainer/>
+        <ItemListContainer greeting='E-commerce' />
+        {/* <ItemCount/> */}
+        {/* <ItemDetailContainer/> */}
     </div>
   );
 }
