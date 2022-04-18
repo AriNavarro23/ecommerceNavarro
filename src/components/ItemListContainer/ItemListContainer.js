@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react'
 import { getProducts } from '../../mock'
 import ItemList from '../ItemList/ItemList'
 
+
 const ItemListContainer = (props) => {
+
     const [products, setProducts] = useState([])
     
     useEffect(() => {
@@ -16,9 +18,6 @@ const ItemListContainer = (props) => {
     return(
         <div>
             <h1>{props.greeting}</h1>
-            {/* <ul>
-                { products.map(products => <li> key={products.name}</li>) }
-            </ul> */}
             <ItemList products={products}/>
         </div>
     )

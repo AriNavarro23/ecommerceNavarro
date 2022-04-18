@@ -1,39 +1,15 @@
-import { useState } from "react"
-
-// const ItemCount = () => {
-
-//     const [state, setState] = useState (0)
-
-//     return (
-//         <div>
-//             <button onClick={ () => { setState(state - 1) } }>-</button>
-//             <p>{state}</p>
-//             <button onClick={ () => { setState(state + 1) } }>+</button>
-//         </div>
-//     )
-// }
+import React, {useEffect, useState} from "react";
 
 const ItemCount = () => {
-    const [counter, setCounter] = useState (0);
 
-    const sumar = (counter) => {
-        if (counter > 0) {
-            setCounter(counter +1)
-        }
-    }
-    const restar = (counter) => {
-        if (counter < 0) {
-            setCounter(counter -1)
-        }
-    }
-    const reset = () => setCounter(0);
-
-    return(
+    const [state, setState] = useState (0)
+    const stock = 10;
+    const initial = 0;
+    return (
         <div>
-            <button onClick={restar}>-</button>
-            <p>{counter}</p>
-            <button onClick={sumar}>+</button><br/>
-            <button onClick={reset}>Reset</button>
+            <button onClick={ () => { if (state < stock) {setState(state + 1) } } }>+</button>
+            <p>{state}</p>
+            <button onClick={ () => { if (state > initial) {setState(state - 1) } } }>-</button>
         </div>
     )
 }
