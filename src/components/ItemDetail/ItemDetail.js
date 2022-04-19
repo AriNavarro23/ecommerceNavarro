@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate, link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './ItemDetail.css'
 
 const InputCount = ({onConfirm, stock, initial=1}) => {
@@ -41,6 +41,13 @@ const ButtonCount= ({ onConfirm, stock, initial = 0 })  => {
     )
 }
 
+const Select = ({ options = [], onSelect}) => {
+    return (
+        <select onChange={(e) => onSelect( e.target.value)}>
+            {options.map(o => <option key = {o.id} value = {o.value}> {o.text} </option> )}
+        </select>
+    )
+}
 
 const ItemDetail = ({id, nombre, precio, nft, img, stock, descripcion }) => {
 
@@ -59,7 +66,6 @@ const ItemDetail = ({id, nombre, precio, nft, img, stock, descripcion }) => {
     }
 
     const Count = typeInput ? ButtonCount : InputCount 
-
 
     return (
         <article className="CardItem">
@@ -82,10 +88,9 @@ const ItemDetail = ({id, nombre, precio, nft, img, stock, descripcion }) => {
                     Precio: {precio}
                 </p>
             </section>
-            <footer className="ItemFooter">
-                <select options={ onselect={handleSelect} />
-                {quantity > 0 ? <link to='/cart'> Ir al carrito </link : <Count onConfirm={handleAdd} stock={stock} />} 
-                }
+            <footer className='ItemFooter'>
+                <Select options = {options} onSelect={handleSelect} />
+                {quantity > 0 ? <Link to='/cart'> Ir al carrito </Link> : <Count onConfirm = {handleAdd} stock = {stock} /> } 
             </footer>
         </article>
     )
