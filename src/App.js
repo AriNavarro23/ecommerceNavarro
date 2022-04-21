@@ -1,29 +1,30 @@
-import React from 'react'
-import { useState } from 'react';
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
-import './App.css'; 
+import './App.css';
+import { CartContextProvider } from './context/CartContext';
+import { BrowserRouter, Routes, Route} from 'react-router-dom'; 
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import ItemCount from './components/ItemCount/ItemCount';
+import Form from '../src/components/Form/Form';
 
 
 const App = () => {
+  
 
   return (
     <div className="App">
-        {/* <NavBar/>
-        <ItemListContainer greeting='E-commerce' /> */}
-        {/* <ItemDetailContainer/> */}
+      <CartContextProvider>
         <BrowserRouter>
             <NavBar/>
-                <Routes>
-                    <Route path='/' element={<h1>Home</h1>} />
-                    <Route path='/list' element={<ItemListContainer />} />
-                    <Route path='/detail' element={<ItemDetailContainer />} />
-                </Routes>
+              <Routes>
+                <Route path='*' element={<h1>NOT FOUND 404</h1>}/>
+                <Route path='/' element={<ItemListContainer />} />
+                <Route path='/category/:categoryId' element={<ItemListContainer />} />
+                <Route path='/detail/:productId' element={<ItemDetailContainer />} />
+                <Route path='/Form' element={<Form />} />
+              </Routes>
         </BrowserRouter>
-        {/* <ItemCount/> */}
+      </CartContextProvider>
+
 
     </div>
   );

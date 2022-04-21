@@ -1,3 +1,4 @@
+// array de productos
 
 const products = [
     {
@@ -13,14 +14,36 @@ const products = [
     {id:'3', nombre:"Bored Ape Yacht Club", precio: 1200, nft: "Bored Ape Yacht Club", img: 'https://lh3.googleusercontent.com/oGX9KC5HSLaNBtg3pNyJvlMca_YwhR3xvSllayk86pghLCOJkvbQ8DzNuiF2ZY-HU_ZzYayTZngFnp9kJdi8J140dtErziZcfu2jUw=w600', stock: 1, descripcion:'Bored Ape Yacht Club'},
 ]
 
-export const getProducts = () => {
-    return new Promise (resolve => {
-        setTimeout (() => {
-            resolve(products)
+
+// defino categorias
+const categories = [
+    {id: 'Nft', description: 'Nft'},
+    {id: 'Lands', description: 'Lands'},
+    {id: 'Tokens', description: 'Tokens'}
+]
+
+
+// exporto funcion de categorias y resuelvo con promesa
+export const getCategories = () => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(categories)
         }, 500)
     })
 }
 
+
+// exporto funcion de productos por id y resuelvo promesa filtrando el elegido o los 
+export const getProducts = (categoryId) => {
+    return new Promise (resolve => {
+        setTimeout(() => {
+            resolve(categoryId ? products.filter(prod => prod.category === categoryId) : products)
+        }, 500)
+    })
+}
+
+
+// logica donde traigo producto por id y resuelvo promesa buscando producto por id
 export const getProductsById = (id) => {
     return new Promise (resolve => {
         setTimeout(() => {
