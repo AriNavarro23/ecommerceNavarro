@@ -11,8 +11,6 @@ import { NotificationProvider } from './notification/Notification';
 
 
 const App = () => {
-  
-
   return (
     <div className="App">
       <NotificationProvider>
@@ -24,7 +22,7 @@ const App = () => {
                   <Route path='/' element={<ItemListContainer />} />
                   <Route path='/category/:categoryId' element={<ItemListContainer />} />
                   <Route path='/detail/:productId' element={<ItemDetailContainer />} />
-                  <Route path='/Form' element={<Form />} />
+                  <Route path='/form' element={<Form />} />
                   <Route path='/cart' element={<Cart />} />
                 </Routes>
           </BrowserRouter>
