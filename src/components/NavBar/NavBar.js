@@ -18,21 +18,21 @@ const NavBar = () => {
 
     // devuelvo los componentes, y en categorias mapeo devolviendo nuevo array, linkeo a donde quiero que me lleve cada 
     // componente y muestro por id si esta activo el link o no y muestro nombre por descripcion
-        return (
-            <nav className="NavBar" >
-                <div className='logoH3'>
-                    <Link to='/'>
-                        <h3>Ecommerce</h3>
-                    </Link>
-                </div>    
-                <div className="Categories">
-                    { categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.id}`}
-                    className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}
-                    >{cat.description}</NavLink>)}
-                </div>
-                <CartWidget />
-            </nav>
-        )
-    }
+    return (
+        <nav className="NavBar" >
+            <div className='logoH3'>
+                <Link to='/'>
+                    <h3>Ecommerce</h3>
+                </Link>
+            </div>    
+            <div className="Categories">
+                { categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.id}`}
+                className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}
+                >{cat.description}</NavLink>)}
+            </div>
+            <CartWidget />
+        </nav>
+    )
+}
 
 export default NavBar
