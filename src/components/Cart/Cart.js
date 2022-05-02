@@ -12,12 +12,15 @@ const Cart = () => {
 
     return(
         <>
-        <h1>Cart</h1>
-        <ul>
-            {
-                cart.map(prod => <li key={prod.id}>{prod.name} cantidad:{prod.quantity} Precio Unidad: {prod.precio} SubTotal:{prod.quantity * prod.precio} <button onClick={ () => removeItem(prod.id)}>X</button> </li>)
-            }
-        </ul>
+        <div className="Cart">
+            <h1>Cart</h1>
+            <ul>
+                {
+                    cart.map(prod => <li key={prod.id}>
+                        {prod.img} <br/> Cantidad: {prod.quantity} <br/> Precio Unidad: {prod.price} <br/> SubTotal: {prod.quantity * prod.price} <button onClick={ () => removeItem(prod.id)}>X</button> </li>)
+                }
+            </ul>
+        </div>    
         </>
     )
 }

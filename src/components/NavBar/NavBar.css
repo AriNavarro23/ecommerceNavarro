@@ -5,17 +5,20 @@
     display: flex;
 }
 
+
 .NavBar{
     display: flex;
     width: 100%;
     background-color: gray;
 }
 
+
 .navItem{
     display: flex;
     width: 100%;
     justify-content: flex-end;
 }
+
 
 .navItem li a{
     text-decoration: none;
@@ -25,9 +28,11 @@
     transition: 0.3s ease;
 }
 
+
 .navItem li a:hover {    
     color: #088178;
 }
+
 
 .Categories{
     width: 100%;
@@ -36,17 +41,13 @@
     
 }
 
+
 .ActiveOption, 
 .Option {
     margin: 20px;
     background: blue;
     padding: 10px;
     border-radius: 10px;
-}
-ul{
-    display: flex;
-    width: 50%;
-    justify-content: space-around;
 }
 
 li{
@@ -74,3 +75,4 @@ a{
     padding: 10px;
     border-radius: 10px;
 }
+

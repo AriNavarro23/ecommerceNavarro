@@ -6,7 +6,7 @@ import CartContext from '../../context/CartContext';
 import { useNotification } from '../../notification/Notification'
 
 
-const ItemDetail = ({ id, nombre, img, nft, descripcion, precio, stock }) => {
+const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
 
     const { addItem, isInCart } = useContext(CartContext)
 
@@ -14,11 +14,11 @@ const ItemDetail = ({ id, nombre, img, nft, descripcion, precio, stock }) => {
 
     const handleAdd = (count) => {
         const productObj = {
-            id, nombre, precio, quantity: count
+            id, name, price, quantity: count
         }
 
         addItem(productObj)
-        setNotification('error', `Se agregaron ${count} ${nombre} correctamente`)
+        setNotification('error', `Se agregaron ${count} ${name} correctamente`)
     }
 
 
@@ -26,21 +26,21 @@ return (
     <article className="CardItem">
         <header className="Header">
             <h2 className="ItemHeader">
-                {nombre}
+                {name}
             </h2>
         </header>
         <picture>
-            <img src={img} alt={nombre} className="ItemImg"/>
+            <img src={img} alt={name} className="ItemImg"/>
         </picture>
         <section>
             <p className="Info">
-                Categoria: {nft}
+                Categoria: {category}
             </p>
             <p className="Info">
-                Descripción: {descripcion}
+                Descripción: {description}
             </p>
             <p className="Info">
-                Precio: $ {precio}
+                Precio: $ {price}
             </p>
         </section>           
         <footer className='ItemFooter'>
