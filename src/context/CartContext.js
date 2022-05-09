@@ -8,8 +8,24 @@ export const CartContextProvider = ({ children }) => {
     const [ cart, setCart] = useState ([])
 
     const addItem = (productToAdd) => {
+        if(!isInCart(productToAdd)){
         setCart([...cart, productToAdd])
+    }else{
+        const newProducts = cart.map(prod => {
+            if(prod.id === productToAdd.id){
+                const newProducts = {
+                    ...prod,
+                    quantity: productToAdd.quantity
+                }
+                return newProducts
+            }else{
+                return prod
+            }
+        })
+        setCart(newProducts)
     }
+}
+
 
     const getQuantity = () => {
         let count = 0
