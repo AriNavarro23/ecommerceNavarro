@@ -1,78 +1,90 @@
 /* BARRA DE NAVEGACION */
 
-.logo{
-    width: 150px;
-    display: flex;
-}
-
 
 .NavBar{
     display: flex;
     width: 100%;
-    background-color: gray;
+    align-items: center;
+    background-color: #E3E6F3;
 }
 
-
-.navItem{
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
+.brand{
+    margin: 9px;
 }
 
-
-.navItem li a{
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #1a1a1a;
-    transition: 0.3s ease;
-}
-
-
-.navItem li a:hover {    
+.brand span{
     color: #088178;
 }
-
 
 .Categories{
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     
+}
+
+.ActiveOption, 
+.Option {
+    padding: 10px;
+    color: #1a1a1a;
+    transition: 0.3s ease
 }
 
 
 .ActiveOption, 
-.Option {
-    margin: 20px;
-    background: blue;
-    padding: 10px;
-    border-radius: 10px;
+.Option:hover {    
+    color: #088178;
 }
 
-li{
-    list-style-type: none;
-}
 
 a{
     text-decoration: none;
     color: black;
 }
 
-.logoH3{
-    padding: 5px;
-}
 
 .CartWidget{
     display: flex;
     margin: 15px;
 }
 
+
 .button{
     height: 30px;
     margin: 20px;
-    background: blue;
     padding: 10px;
     border-radius: 10px;
 }
 
+
+/* buscador */
+
+.searchContainer{
+    display: flex;
+    border: 0.5px solid lightgray;
+    align-items: center;
+    border-radius: 5px;
+    margin-left: 25px;
+    padding: 5px;
+    width: 50%;
+}
+
+.searchContainer:hover{
+    cursor: text;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s;
+}
+
+.SearchIcon{
+    color: gray;
+}
+
+.input{
+    border: none;
+    background-color: #E3E6F3;
+    width: 100%;
+    text-align: center;
+    opacity: 0.6;
+    outline: none;
+}

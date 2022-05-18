@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import { CartContextProvider } from './context/CartContext';
 import { BrowserRouter, Routes, Route} from 'react-router-dom'; 
 import NavBar from './components/NavBar/NavBar';
@@ -7,6 +7,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Form from '../src/components/Form/Form';
 import Cart from './components/Cart/Cart';
 import { NotificationProvider } from './notification/Notification';
+import Checkout from './components/CheckoutForm/Checkout';
 
 
 
@@ -24,6 +25,7 @@ const App = () => {
                   <Route path='/detail/:productId' element={<ItemDetailContainer />} />
                   <Route path='/form' element={<Form />} />
                   <Route path='/cart' element={<Cart />} />
+                  {/* <Route path='/Checkout' element={<Checkout/>} ></Route> */}
                 </Routes>
           </BrowserRouter>
         </CartContextProvider>

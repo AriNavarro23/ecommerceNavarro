@@ -1,11 +1,10 @@
-import Item from '../Item/Item';
 import './ItemList.css';
-
+import Item from '../Item/Item';
 
 const ItemList = ({products}) => {
 
     return(
-        <ul className='listProducts' onClick={() => console.log('Hice click en itemlist')}>
+        <ul className='listProducts'>
             {products.map(prod => <Item key={prod.id} {...prod} />)}
         </ul>
     )

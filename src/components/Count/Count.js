@@ -1,25 +1,5 @@
 import React, { useState} from "react";
 
-// const Count = (onAdd) => {
-
-//     const [count, setCount] = useState (0)
-
-//     const stock = 10;
-//     const initial = 0;
-
-//     return (
-//         <div>
-//             <button onClick={ () => { if (count< stock) {setCount(count + 1) } } }>+</button>
-//             <p>{count}</p>
-//             <button onClick={ () => { if (count > initial) {setCount(count - 1) } } }>-</button>
-//             <button onClick={() => onAdd(count)}>Agregar al carrito</button>
-
-//         </div>
-//     )
-// }
-
-// export default Count
-
 const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
     const [quantity, setQuantity] = useState(initial)
 
@@ -42,7 +22,7 @@ const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
     return(
         <div align="center">          
             <table >
-                <tbody>
+                <tbody className="tBody">
                     <tr>
                         <td align="left"><button className="Option" onClick={decrement}>-</button></td>
                         <td align="center" style={{fontSize : '20px'}}>{quantity}</td>
@@ -59,3 +39,25 @@ const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
 }
 
 export default ItemCount
+
+
+
+// const Count = (onAdd) => {
+
+//     const [count, setCount] = useState (0)
+
+//     const stock = 10;
+//     const initial = 0;
+
+//     return (
+//         <div>
+//             <button onClick={ () => { if (count< stock) {setCount(count + 1) } } }>+</button>
+//             <p>{count}</p>
+//             <button onClick={ () => { if (count > initial) {setCount(count - 1) } } }>-</button>
+//             <button onClick={() => onAdd(count)}>Agregar al carrito</button>
+
+//         </div>
+//     )
+// }
+
+// export default Count

@@ -1,8 +1,10 @@
+import './Cart.css'
 import { useContext, useState } from "react";
 import CartContext from "../../context/CartContext";
 import CartItem from '../CartItem/CartItem';
 import { getDocs, writeBatch, query, where, collection, documentId, addDoc} from "firebase/firestore";
-import { FirestoreDb } from "../../Service/Firebase";
+import { firestoreDb } from "../../Service/Firebase";
+import Checkout from '../CheckoutForm/Checkout';
 
 
 const Cart = () => {
@@ -11,6 +13,7 @@ const Cart = () => {
 
     const createOrder = () => {
         setLoading (true)
+
         // Orden de compra
         const objOrder = {
             items: cart,
@@ -25,9 +28,9 @@ const Cart = () => {
 
         const ids = cart.map(prod => prod.id)
 
-        const batch = writeBatch(FirestoreDb)
+        const batch = writeBatch(firestoreDb)
 
-        const collectionRef = collection(FirestoreDb, 'products')
+        const collectionRef = collection(firestoreDb, 'products')
 
         const outOfStock = []
         
@@ -51,14 +54,14 @@ const Cart = () => {
             // si esta todo bien con los stock
             }).then(() =>{
                 if (outOfStock.length === 0){
-                    const collectionRef = collection(FirestoreDb, 'orders' )
+                    const collectionRef = collection(firestoreDb, 'orders' )
                     addDoc(collectionRef, objOrder)
                 } else {
                     return Promise.reject( {name:' outOfStock', products: outOfStock })
                 }
             }).then(({ id }) => {
                 batch.commit()
-                console.log(`El id de la orden ${id}`);
+                console.log(`El id de la orden es ${id}`);
             }).catch(error => {
                 console.log(error);
             }).finally(() => {
@@ -73,8 +76,8 @@ const Cart = () => {
     if(getQuantity() === 0){
         return(<h1>No hay productos en el carrito</h1>)
     }
+
     return(
-        <>
         <div className="Cart">
             <h1>Cart</h1>
             { cart.map( p => <CartItem key={p.id} {...p}/>) }
@@ -82,7 +85,6 @@ const Cart = () => {
             <button onClick={() => clearCart()} className = "Button">Limpiar carrito</button>
             <button onClick={() => createOrder()} className = "Button">Generar Orden</button>
         </div>    
-        </>
     )
 }
 

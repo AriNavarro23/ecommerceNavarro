@@ -1,9 +1,9 @@
 .Success {
-    background-color: green;
+    background-color: #088178;
 }
 
 .Error {
-    background-color: green;
+    background-color: red;
 }
 
 .Message {

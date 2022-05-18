@@ -3,15 +3,8 @@ import { Link } from "react-router-dom"
 
 
 const Item = ({id, name, price, img}) => {
-
-    const handleClick = (e) => {
-        e.stopPropagation()
-        console.log('Hice click en item');
-    }
-
     return (
-
-        <article className="CardItem" onClick={handleClick}>
+        <article className="CardItem">
             <header className="Head">
                 <h2 className="ItemHeader">
                     {name}

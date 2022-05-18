@@ -1,4 +1,4 @@
-import './CartItem.css'
+// import './CartItem.css'
 import { useContext } from 'react'
 import CartContext from '../../context/CartContext'
 
@@ -9,10 +9,28 @@ const CartItem = ({ id, name, quantity, price }) => {
         removeItem(id)
     }
     return (
-        <article className='Card'
+        <article className='CardCartItem'>
+            <header className='HeaderCartItem'>
+                <h2 className='ItemHeaderCartItem'>
+                    {name}
+                </h2>
+            </header>
+            <section className='ContainerItemCartItem'>
+                <p className='InfoCartItem'>
+                    Cantidad: {quantity}
+                </p>
+                <p className='InfoCartItem'>
+                    Precio por unidad: $ {price}
+                </p>
+            </section>
+            <footer className='ItemFooterCartItem'>
+                <p className='InfoCartItem'>
+                    Subtotal: $ {price * quantity}
+                </p>
+                <button className='ButtonCartItem' onClick={() => handleRemove (id)}>X</button>
+            </footer>
+        </article>
     )
 }
-
-
 
 export default CartItem

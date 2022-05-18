@@ -1,8 +1,13 @@
 
 .CardItem{
-    width:auto;
-    text-align: center;
+    width: 270px;
+    height: 430px;
+    border-radius: 15px;
+    box-shadow: 0 5px 5px #088178;
+    overflow: hidden;
     margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
 }
 
 .Head{
