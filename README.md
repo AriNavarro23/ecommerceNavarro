@@ -30,8 +30,8 @@ AN uses a number of open source projects to work properly:
 Requirements 
 
 >[Node.js](https://nodejs.org/)
-> NPM
-> WebPack
+>[NPM]
+>[WebPack]
 
 
 /* First, Install the needed packages */
