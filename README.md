@@ -30,8 +30,10 @@ AN uses a number of open source projects to work properly:
 Requirements 
 
 >[Node.js](https://nodejs.org/)
->[NPM]
->[WebPack]
+
+>NPM
+
+>WebPack
 
 
 /* First, Install the needed packages */
@@ -99,13 +101,3 @@ MIT
    [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
    [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
    [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
-
-
-
-
-como cargar a firebase
-caracteristicas del objeto del producto ( nombre, precio , categoria, img, etc)
-como se hace una compra
-de que funcion se encarga cada uno
-
-hacer gif mostrando como selecciono un producto y hago la orden de compra
